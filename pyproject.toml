@@ -7,17 +7,19 @@ requires-python = ">=3.8"
 dependencies = [
     "markdown",
     "pandas",
-    "openpyxl"
+    "openpyxl",
+    "jinja2>=3.1.6",
 ]
 
 [project.scripts]
-serve = "serve:main"
+serve = "src.serve:main"
+convert = "src.convert:main"
 
 [tool.uv]
 package = true
 
 [tool.setuptools]
-py-modules = ["serve"]
+py-modules = ["src.serve", "src.convert"]
 
 [build-system]
 requires = ["setuptools"]

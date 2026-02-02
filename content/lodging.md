@@ -30,6 +30,7 @@ General accommodation price ranges in Guatemala:
 - Typical range: **$40–$90+ USD / night** for a private space with 3 beds or 1–2 rooms. 
 
 **Hostel Comparison**
+
 - **Dorm bed:** ~$10–$15 USD   
 - **Hostel private room:** ~$20–$35 USD   
 - Private rooms cost more but give **more privacy and comfort** — great for groups.
@@ -45,6 +46,7 @@ General accommodation price ranges in Guatemala:
 - Good mid-range pricing for 3 people: **~$40–$80+ USD / night** (depends on lake view). 
 
 **Hostel Comparison**
+
 - **Dorm bed:** ~$8–$15 USD   
 - **Hostel private room:** ~$25–$50 USD 
 
@@ -63,6 +65,7 @@ General accommodation price ranges in Guatemala:
 - Typical range: **$30–$70 USD / night** for a private room or family room. 
 
 **Hostel Comparison**
+
 - **Dorm bed:** ~$8–$15 USD   
 - Hostels in Lanquín often offer private rooms at modest prices (split among 3). 
 
@@ -77,6 +80,7 @@ General accommodation price ranges in Guatemala:
 - Typical pricing: **$40–$100+ USD / night** for a private room or small apartment. 
 
 **Hostel Comparison**
+
 - **Dorm bed:** ~$10–$15 USD   
 - **Hostel private room:** ~$20–$35 USD 
 

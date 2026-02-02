@@ -35,9 +35,9 @@ jobs:
       - name: Sync dependencies
         run: uv sync
       - name: Build site
-        run: uv run python convert.py
+        run: uv run convert
       - name: Prepare dist
-        run: mkdir dist && cp *.html dist/
+        run: ls -la dist/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

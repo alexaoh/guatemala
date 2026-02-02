@@ -21,12 +21,12 @@ uv sync
 Run the conversion script:
 
 ```bash
-uv run python convert.py
+uv run convert
 ```
 
 ## Serve Locally
 
-Start the local server:
+Start the local server (serves from `dist/`):
 
 ```bash
 uv run serve
@@ -50,9 +50,16 @@ The workflow:
 
 ## Files
 
-- `convert.py`: Converts Markdown and Excel to HTML
-- `serve.py`: Starts the HTTP server
-- `index.html`: Homepage
-- `lodging.html`: Lodging guide
-- `itinerary.html`: Itineraries with tabs
-- `south_first_itinerary.html`: South First Itinerary Narration
+- `src/convert.py`: Converts Markdown files to HTML using Jinja2 templating and processes Excel data for itineraries
+- `src/serve.py`: Starts the HTTP server for local development, serving from dist/
+- `src/templates/base.html`: Jinja2 template providing consistent HTML structure and styling for all pages
+- `content/`: Directory containing source files
+  - `content/lodging.md`: Lodging guide source
+  - `content/south_first_itinerary.md`: South First Itinerary Narration source
+  - `content/Guatemala.xlsx`: Excel file with itinerary data
+- `dist/`: Directory containing generated HTML files for deployment
+  - `dist/index.html`: Homepage
+  - `dist/lodging.html`: Lodging guide (generated from content/lodging.md)
+  - `dist/itinerary.html`: Itineraries with tabs (generated from content/Guatemala.xlsx)
+  - `dist/south_first_itinerary.html`: South First Itinerary Narration (generated from content/south_first_itinerary.md)
+- `config.json`: Configuration file containing theme settings, colors, fonts, and navigation structure

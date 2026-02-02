@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title or config.site.title }}</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400&display=swap');
+        body {
+            font-family: {{ config.theme.fonts.secondary }};
+            margin: 40px;
+            line-height: 1.6;
+            background-color: {{ config.theme.colors.background }};
+            color: {{ config.theme.colors.text }};
+        }
+        h1, h2, h3 {
+            font-family: {{ config.theme.fonts.primary }};
+            color: {{ config.theme.colors.accent }};
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background-color: #fffaf0;
+            border: 2px solid {{ config.theme.colors.table_border }};
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        th, td {
+            border: 1px solid {{ config.theme.colors.table_border }};
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background-color: {{ config.theme.colors.table_header_bg }};
+            color: {{ config.theme.colors.table_header_text }};
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9em;
+        }
+        tr:nth-child(even) { background-color: #f9f6f0; }
+        tr:hover { background-color: #f0e68c; }
+        a {
+            color: {{ config.theme.colors.link }};
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: #000080;
+        }
+        nav {
+            background-color: {{ config.theme.nav_bg }};
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        nav a {
+            color: {{ config.theme.nav_text }};
+            margin: 0 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        {% for item in config.navigation %}
+        <a href="{{ item.url }}">{{ item.name }}</a>{% if not loop.last %} | {% endif %}
+        {% endfor %}
+    </nav>
+    <hr>
+    {{ content | safe }}
+</body>
+</html>

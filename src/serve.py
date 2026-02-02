@@ -10,6 +10,9 @@ def main():
     port = 8000
     handler = http.server.SimpleHTTPRequestHandler
 
+    # Change to dist directory to serve the generated site
+    os.chdir('dist')
+
     with socketserver.TCPServer(("", port), handler) as httpd:
         print(f"Serving at http://localhost:{port}")
         print("Press Ctrl+C to stop the server.")

@@ -1,0 +1,30 @@
+{
+  "site": {
+    "title": "Guatemala Wizarding Adventures",
+    "description": "Magical travel guide for Guatemala"
+  },
+  "theme": {
+    "fonts": {
+      "primary": "'Cinzel', serif",
+      "secondary": "'Roboto', sans-serif"
+    },
+    "colors": {
+      "background": "#f5f5dc",
+      "text": "#2e2e2e",
+      "accent": "#8b0000",
+      "link": "#1e90ff",
+      "table_border": "#daa520",
+      "table_header_bg": "#daa520",
+      "table_header_text": "#8b0000"
+    },
+    "sparkle_bg": "url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><text fill=\"%23daa520\" font-size=\"20\" y=\"50%\">✨</text></svg>')",
+    "nav_bg": "#daa520",
+    "nav_text": "#8b0000"
+  },
+  "navigation": [
+    {"name": "Home", "url": "index.html"},
+    {"name": "Lodging", "url": "lodging.html"},
+    {"name": "Itineraries", "url": "itinerary.html"},
+    {"name": "South First Itinerary Narration", "url": "south_first_itinerary.html"}
+  ]
+}
