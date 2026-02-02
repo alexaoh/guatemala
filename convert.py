@@ -6,22 +6,69 @@ import pandas as pd
 def convert_md_to_html(md_file, html_file):
     with open(md_file, 'r') as f:
         md_content = f.read()
-    html_content = markdown.markdown(md_content)
+    html_content = markdown.markdown(md_content, extensions=['tables'])
     with open(html_file, 'w') as f:
         f.write(f"""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{os.path.basename(md_file).replace('.md', '').title()}</title>
+    <title>South First Itinerary Narration</title>
     <style>
-        body {{ font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }}
-        h1, h2, h3 {{ color: #333; }}
-        table {{ border-collapse: collapse; width: 100%; }}
-        th, td {{ border: 1px solid #ddd; padding: 8px; text-align: left; }}
-        th {{ background-color: #f2f2f2; }}
-        a {{ color: #007bff; text-decoration: none; }}
-        a:hover {{ text-decoration: underline; }}
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400&display=swap');
+        body {{ 
+            font-family: 'Roboto', sans-serif; 
+            margin: 40px; 
+            line-height: 1.6; 
+            background-color: #f5f5dc; 
+            color: #2e2e2e;
+        }}
+        h1, h2, h3 {{ 
+            font-family: 'Cinzel', serif; 
+            color: #8b0000; 
+        }}
+        table {{ 
+            border-collapse: collapse; 
+            width: 100%; 
+            background-color: #fffaf0; 
+            border: 2px solid #daa520; 
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }}
+        th, td {{ 
+            border: 1px solid #daa520; 
+            padding: 12px; 
+            text-align: left; 
+            vertical-align: top;
+        }}
+        th {{ 
+            background-color: #daa520; 
+            color: #8b0000; 
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9em;
+        }}
+        tr:nth-child(even) {{ background-color: #f9f6f0; }}
+        tr:hover {{ background-color: #f0e68c; }}
+        a {{ 
+            color: #1e90ff; 
+            text-decoration: none; 
+        }}
+        a:hover {{ 
+            text-decoration: underline; 
+            color: #000080; 
+        }}
+        nav {{ 
+            background-color: #daa520; 
+            padding: 10px; 
+            border-radius: 5px; 
+            margin-bottom: 20px;
+        }}
+        nav a {{ 
+            color: #8b0000; 
+            margin: 0 10px; 
+            font-weight: bold;
+        }}
     </style>
 </head>
 <body>
@@ -29,7 +76,7 @@ def convert_md_to_html(md_file, html_file):
         <a href="index.html">Home</a> | 
         <a href="lodging.html">Lodging</a> | 
         <a href="itinerary.html">Itineraries</a> |
-        <a href="narrative_itinerary.html">Narrative Itinerary</a>
+        <a href="south_first_itinerary.html">South First Itinerary Narration</a>
     </nav>
     <hr>
     {html_content}
@@ -55,25 +102,31 @@ def create_itinerary_html():
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guatemala Itineraries</title>
     <style>
-        body {{ font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }}
-        h1 {{ color: #333; }}
-        table {{ border-collapse: collapse; width: 100%; }}
-        th, td {{ border: 1px solid #ddd; padding: 8px; text-align: left; }}
-        th {{ background-color: #f2f2f2; }}
-        a {{ color: #007bff; text-decoration: none; }}
-        a:hover {{ text-decoration: underline; }}
-        .tab {{ overflow: hidden; border: 1px solid #ccc; background-color: #f1f1f1; }}
-        .tab button {{ background-color: inherit; float: left; border: none; outline: none; cursor: pointer; padding: 14px 16px; transition: 0.3s; }}
-        .tab button:hover {{ background-color: #ddd; }}
-        .tab button.active {{ background-color: #ccc; }}
-        .tabcontent {{ display: none; padding: 6px 12px; border: 1px solid #ccc; border-top: none; }}
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400&display=swap');
+        body {{ font-family: 'Roboto', sans-serif; margin: 40px; line-height: 1.6; background-color: #f5f5dc; color: #2e2e2e; }}
+        h1, h2, h3 {{ font-family: 'Cinzel', serif; color: #8b0000; }}
+        table {{ border-collapse: collapse; width: 100%; background-color: #fffaf0; border: 2px solid #daa520; margin: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }}
+        th, td {{ border: 1px solid #daa520; padding: 12px; text-align: left; vertical-align: top; }}
+        th {{ background-color: #daa520; color: #8b0000; font-weight: bold; text-transform: uppercase; font-size: 0.9em; }}
+        tr:nth-child(even) {{ background-color: #f9f6f0; }}
+        tr:hover {{ background-color: #f0e68c; }}
+        a {{ color: #1e90ff; text-decoration: none; }}
+        a:hover {{ text-decoration: underline; color: #000080; }}
+        .tab {{ overflow: hidden; border: 1px solid #daa520; background-color: #daa520; }}
+        .tab button {{ background-color: inherit; float: left; border: none; outline: none; cursor: pointer; padding: 14px 16px; transition: 0.3s; color: #8b0000; font-weight: bold; }}
+        .tab button:hover {{ background-color: #ffd700; }}
+        .tab button.active {{ background-color: #ffd700; }}
+        .tabcontent {{ display: none; padding: 6px 12px; border: 1px solid #daa520; border-top: none; background-color: #fffaf0; }}
+        nav {{ background-color: #daa520; padding: 10px; border-radius: 5px; margin-bottom: 20px; }}
+        nav a {{ color: #8b0000; margin: 0 10px; font-weight: bold; }}
     </style>
 </head>
 <body>
     <nav>
         <a href="index.html">Home</a> | 
         <a href="lodging.html">Lodging</a> | 
-        <a href="itinerary.html">Itinerary</a>
+        <a href="itinerary.html">Itineraries</a> |
+        <a href="south_first_itinerary.html">South First Itinerary Narration</a>
     </nav>
     <hr>
     <h1>🇬🇹 Guatemala Itineraries</h1>
@@ -95,6 +148,8 @@ def create_itinerary_html():
     </div>
 
     <p><a href="Guatemala.xlsx" download>Download the full Excel file</a></p>
+
+    <p><a href="south_first_itinerary.html">📖 Read the South First Itinerary Narration</a></p>
 
     <script>
         function openTab(evt, tabName) {{
@@ -118,7 +173,7 @@ def create_itinerary_html():
 
 # Convert the files
 convert_md_to_html('lodging.md', 'lodging.html')
-convert_md_to_html('south_first_itinerary.md', 'narrative_itinerary.html')  # Rename to avoid conflict
+convert_md_to_html('south_first_itinerary.md', 'south_first_itinerary.html')
 create_itinerary_html()
 
 print("HTML files generated successfully!")

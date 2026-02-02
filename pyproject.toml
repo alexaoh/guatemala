@@ -1,0 +1,11 @@
+[project]
+name = "guatemala-travel"
+version = "0.1.0"
+description = "Guatemala travel website generator"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "markdown",
+    "pandas",
+    "openpyxl"
+]
