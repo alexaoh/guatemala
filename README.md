@@ -24,21 +24,28 @@ Run the conversion script:
 uv run python convert.py
 ```
 
-## Serve the Website
+## Serve Locally
 
 Start the local server:
 
 ```bash
-uv run python serve.py
-```
-
-Or directly:
-
-```bash
-python serve.py
+uv run serve
 ```
 
 Then open http://localhost:8000 in your browser.
+
+## Deploy to GitHub Pages
+
+1. Push this repository to GitHub (create a new repo if needed)
+2. Go to your repo settings > Pages
+3. Set Source to "GitHub Actions"
+4. Push any change to the `main` branch - the workflow will automatically build and deploy
+5. Your site will be available at `https://<username>.github.io/<repo-name>/`
+
+The GitHub Action will:
+- Install dependencies with uv
+- Generate HTML from Markdown
+- Deploy the static files to GitHub Pages
 
 ## Files
 

@@ -123,8 +123,4 @@ General accommodation price ranges in Guatemala:
 - Private rooms and apartments **sell out faster** in peak season — book ahead of time.   
 - Lake Atitlán apartments with kitchens save money on meals.   
 - In remote areas like Semuc Champey, lodging is limited — prioritize booking private space early.
-
----
-
-If you want, I can turn this into **a Google Sheet comparison tool** with links and price estimates for each individual property! Just tell me your preference (Antigua, Atitlán villages, etc.).
 :

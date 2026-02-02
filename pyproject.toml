@@ -9,3 +9,16 @@ dependencies = [
     "pandas",
     "openpyxl"
 ]
+
+[project.scripts]
+serve = "serve:main"
+
+[tool.uv]
+package = true
+
+[tool.setuptools]
+py-modules = ["serve"]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
