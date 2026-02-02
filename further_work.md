@@ -1,8 +1,8 @@
-Yes, your current setup is functional but "homemade"—migrating to a standardized framework like Eleventy (11ty.dev) would make it much more maintainable, extensible, and professional. 11ty is excellent for static sites with Markdown, and it handles templating, layouts, and plugins out of the box.
+Current setup is functional but "homemade". Migrating to a standardized framework like Eleventy (11ty.dev) would make it much more maintainable, extensible, and professional. 11ty is excellent for static sites with Markdown, and it handles templating, layouts, and plugins out of the box.
 
 ## Option 1: Migrate to Eleventy (Recommended for Standardization)
 
-Eleventy can process your Markdown files, apply consistent layouts/themes, and even handle data files. Here's how to set it up:
+Eleventy can process your Markdown files, apply consistent layouts/themes, and even handle data files. Can be set up like:
 
 ### Step-by-Step Migration:
 
@@ -97,9 +97,9 @@ Eleventy can process your Markdown files, apply consistent layouts/themes, and e
 
 9. **Update GitHub Actions**: Change the build step to run 11ty instead of your Python script.
 
-## Option 2: Improve Your Current Python Script (Less Disruptive)
+## HAS BEEN DONE FOR NOW - Option 2: Improve Current Python Script (Less Disruptive)
 
-Make your [`convert.py`](convert.py ) more general and modular:
+Make [`convert.py`](convert.py ) more general and modular:
 
 - Use Jinja2 for templates instead of hardcoded HTML
 - Separate layout, content, and data processing
@@ -112,5 +112,3 @@ This keeps Python but makes it more maintainable.
 - **Flexible**: Markdown, data files, custom plugins
 - **Fast**: Incremental builds, great performance
 - **Future-proof**: Easy to add features like RSS, sitemaps, etc.
-
-Would you like me to help implement the 11ty migration or improve your Python script? 🛠️✨

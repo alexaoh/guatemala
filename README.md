@@ -63,3 +63,7 @@ The workflow:
   - `dist/itinerary.html`: Itineraries with tabs (generated from content/Guatemala.xlsx)
   - `dist/south_first_itinerary.html`: South First Itinerary Narration (generated from content/south_first_itinerary.md)
 - `config.json`: Configuration file containing theme settings, colors, fonts, and navigation structure
+
+## Further Work
+
+See [further_work.md](further_work.md) for planned improvements and migration suggestions.
