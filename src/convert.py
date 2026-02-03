@@ -3,6 +3,7 @@ import markdown
 import os
 import pandas as pd
 import json
+import argparse
 from jinja2 import Environment, FileSystemLoader
 
 # Load configuration
@@ -28,7 +29,7 @@ def convert_md_to_html(md_file, html_file):
     with open(html_file, 'w') as f:
         f.write(output)
 
-def create_itinerary_html():
+def create_itinerary_html(output_dir):
     xl = pd.ExcelFile('content/Guatemala.xlsx')
     sheets = xl.sheet_names  # ['South first', 'North first']
     
@@ -86,20 +87,32 @@ def create_itinerary_html():
         config=config
     )
     
-    with open('dist/itinerary.html', 'w') as f:
+    with open(os.path.join(output_dir, 'itinerary.html'), 'w') as f:
         f.write(output)
 
 # Convert the files
-def main():
-    convert_md_to_html('content/lodging.md', 'dist/lodging.html')
-    convert_md_to_html('content/south_first_itinerary.md', 'dist/south_first_itinerary.html')  # Rename to avoid conflict
-    create_itinerary_html()
+def main(output_dir):
+    os.makedirs(output_dir, exist_ok=True)
+    convert_md_to_html('content/lodging.md', os.path.join(output_dir, 'lodging.html'))
+    convert_md_to_html('content/south_first_itinerary.md', os.path.join(output_dir, 'south_first_itinerary.html'))  # Rename to avoid conflict
+    create_itinerary_html(output_dir)
     
-    # Copy the Excel file to dist for download
+    # Copy the Excel file for download and the index html to output directory
     import shutil
-    shutil.copy('content/Guatemala.xlsx', 'dist/Guatemala.xlsx')
+    shutil.copy('content/Guatemala.xlsx', os.path.join(output_dir, 'Guatemala.xlsx'))
+    shutil.copy('content/index.html', os.path.join(output_dir, 'index.html'))
 
-    print("HTML files generated successfully!")
+    print(f"HTML files generated successfully and saved to '{output_dir}'!")
+
+
+def entrypoint():
+    parser = argparse.ArgumentParser(description='Convert Markdown and Excel files to HTML.')
+    parser.add_argument('-o', '--output-dir', default='dist', help='Output directory for generated files (default: "dist")')
+    args = parser.parse_args()
+    output_dir = args.output_dir
+    main(output_dir)
+    
 
 if __name__ == "__main__":
-    main()
+    entrypoint()
+    

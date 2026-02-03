@@ -18,6 +18,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      DIST_DIR: dist
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -35,13 +37,13 @@ jobs:
       - name: Sync dependencies
         run: uv sync
       - name: Build site
-        run: uv run convert
+        run: uv run convert --output-dir ${{ env.DIST_DIR }}
       - name: Prepare dist
         run: ls -la dist/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: ${{ env.DIST_DIR }}
 
   deploy:
     if: github.ref == 'refs/heads/main'

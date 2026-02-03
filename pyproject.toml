@@ -12,8 +12,8 @@ dependencies = [
 ]
 
 [project.scripts]
-serve = "src.serve:main"
-convert = "src.convert:main"
+serve = "src.serve:entrypoint"
+convert = "src.convert:entrypoint"
 
 [tool.uv]
 package = true

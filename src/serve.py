@@ -5,7 +5,7 @@ import http.server
 import socketserver
 import os
 
-def main():
+def entrypoint():
     """Start the HTTP server on port 8000."""
     port = 8000
     handler = http.server.SimpleHTTPRequestHandler
@@ -22,4 +22,4 @@ def main():
             print("\nServer stopped.")
 
 if __name__ == "__main__":
-    main()
+    entrypoint()
